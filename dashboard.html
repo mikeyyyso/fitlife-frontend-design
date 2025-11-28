@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitLife - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dashboard-bg">
+
+    <header class="dashboard-header">
+        <div class="header-left">
+            <a href="index.html" class="dashboard-logo">FitLife</a>
+        </div>
+        <div class="user-profile">Username</div>
+    </header>
+
+    <div class="dashboard-content">
+
+        <nav class="nav-pills-container">
+            <a href="#" class="nav-item active">DASHBOARD</a>
+            <a href="workouts.html" class="nav-item">LATIHAN</a>
+            <a href="exercises.html" class="nav-item">GERAKAN</a>
+            <a href="goals.html" class="nav-item">TARGET</a>
+        </nav>
+
+        <div class="stats-grid">
+            <div class="card">
+                <div class="card-title">Latihan Minggu Ini</div>
+                <div class="card-value">6 Sesi</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Menit Aktif</div>
+                <div class="card-value">280 Menit</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Progres Target</div>
+                <div class="card-value">75%</div>
+            </div>
+        </div>
+
+        <div class="charts-grid">
+            
+            <div class="chart-card">
+                <div class="chart-header">
+                    <div>
+                        <div class="card-title chart-title-text">Aktivitas Mingguan</div>
+                        <span class="chart-subtitle">waktu per hari</span>
+                    </div>
+                    <span class="chart-subtitle active-indicator">Paling Aktif: Jumat</span>
+                </div>
+
+                <div class="bar-chart-container">
+                    <div class="bar-group"><div class="bar" style="height: 40%;"></div><span class="day-label">Sen</span></div>
+                    <div class="bar-group"><div class="bar" style="height: 60%;"></div><span class="day-label">Sel</span></div>
+                    <div class="bar-group"><div class="bar" style="height: 30%;"></div><span class="day-label">Rab</span></div>
+                    <div class="bar-group"><div class="bar" style="height: 70%;"></div><span class="day-label">Kam</span></div>
+                    <div class="bar-group"><div class="bar active" style="height: 95%;"></div><span class="day-label">Jum</span></div> 
+                    <div class="bar-group"><div class="bar" style="height: 65%;"></div><span class="day-label">Sab</span></div>
+                    <div class="bar-group"><div class="bar" style="height: 50%;"></div><span class="day-label">Min</span></div>
+                </div>
+            </div>
+
+            <div class="chart-card">
+                <div class="chart-header">
+                    <div>
+                        <div class="card-title chart-title-text">Progres Berat Badan</div>
+                        <span class="chart-subtitle">4 minggu terakhir</span>
+                    </div>
+                </div>
+
+                <div class="line-chart-container">
+                    <div class="chart-axis"></div>
+                    <svg width="100%" height="100%" viewBox="0 0 500 150" style="position: absolute; top:0; left:0; overflow: visible;">
+                        <polyline points="20,40 170,60 340,50 480,90" 
+                                  style="fill:none;stroke:#CFCFCF;stroke-width:1; opacity: 0.6;" />
+                        <circle cx="20" cy="40" r="6" fill="#2FAF75" />
+                        <circle cx="170" cy="60" r="6" fill="#2FAF75" />
+                        <circle cx="340" cy="50" r="6" fill="#2FAF75" />
+                        <circle cx="480" cy="90" r="6" fill="#2FAF75" />
+                    </svg>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

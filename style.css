@@ -1,0 +1,849 @@
+/* --- FILE: style.css (FULL VERSION) --- */
+
+/* Import Font Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* --- 1. RESET & BASE --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body, html {
+    height: 100%;
+    font-family: 'Inter', sans-serif;
+    background-color: #000000;
+    overflow-x: hidden; /* Mencegah scroll ke samping */
+}
+
+/* Container untuk Halaman Login/Register (Split Screen) */
+.container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* --- 2. PANEL KIRI (BRANDING) --- */
+.left-panel {
+    width: 45%; 
+    background-color: #1C0C0C; /* Dark brown */
+    color: white;
+    padding: 60px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    border-right: 1px solid #222; 
+}
+
+.logo {
+    position: absolute;
+    top: 50px;
+    left: 80px;
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    text-decoration: none;
+    color: white;
+}
+
+.badge-pill {
+    display: inline-flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.08);
+    border-radius: 50px;
+    padding: 4px 5px;
+    margin-bottom: 25px;
+    width: fit-content;
+}
+
+.badge-new {
+    background-color: #2FAF75;
+    color: white;
+    font-weight: 800;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 10px;
+    margin-right: 12px;
+}
+
+.badge-text {
+    font-size: 11px;
+    color: #888;
+    padding-right: 15px;
+    font-weight: 500;
+}
+
+.headline {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    line-height: 0.85;
+}
+
+.headline span {
+    font-size: 120px; 
+    font-weight: 800;
+    color: white;
+    display: block;
+    margin-left: -5px;
+}
+
+.description {
+    color: #8A8181;
+    font-size: 14px;
+    line-height: 1.6;
+    max-width: 450px;
+    margin-bottom: 50px;
+    margin-top: 10px;
+}
+
+.button-group { display: flex; gap: 20px; }
+
+.btn-brand {
+    width: 160px;
+    padding: 16px 0;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    transition: 0.2s;
+}
+.btn-brand:hover { transform: translateY(-2px); }
+.btn-green { background-color: #2FAF75; color: white; }
+.btn-dark { background-color: #362C2C; color: #ccc; }
+
+
+/* --- 3. PANEL KANAN: GAMBAR (Halaman Depan) --- */
+.right-panel-image {
+    width: 55%;
+    position: relative;
+    background-color: black;
+    overflow: hidden;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.85) contrast(1.1);
+    mask-image: linear-gradient(to right, transparent 0%, black 20%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 20%);
+}
+
+.login-link {
+    position: absolute;
+    top: 50px;
+    right: 80px;
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    opacity: 0.7;
+    z-index: 10;
+    text-transform: uppercase;
+}
+.login-link:hover { opacity: 1; }
+
+
+/* --- 4. PANEL KANAN: FORM (Halaman Login/Signup) --- */
+.right-panel-form {
+    width: 55%;
+    background-color: #000000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    color: white;
+}
+
+.login-title {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.login-subtitle {
+    color: #9CA3AF;
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.form-group { margin-bottom: 24px; }
+
+.form-label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: #E5E7EB;
+    margin-bottom: 8px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 14px 16px;
+    background-color: transparent;
+    border: 1px solid #4B5563;
+    border-radius: 12px;
+    color: white;
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+    transition: border-color 0.2s;
+}
+
+.form-input:focus { outline: none; border-color: #FF4D4D; }
+.form-input::placeholder { color: #6B7280; }
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    font-size: 13px;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    color: #D1D5DB;
+    cursor: pointer;
+}
+.checkbox-container input {
+    margin-right: 8px;
+    accent-color: #FF4D4D;
+    width: 16px;
+    height: 16px;
+}
+
+.forgot-link { color: #D1D5DB; text-decoration: none; }
+
+/* Tombol Sign In / Register */
+.btn-signin {
+    width: 100%;
+    padding: 16px;
+    background-color: #FF4D4D;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-bottom: 20px;
+    
+    /* Agar tag <a> terlihat seperti tombol */
+    display: block; 
+    text-align: center; 
+    text-decoration: none;
+}
+.btn-signin:hover { background-color: #e04343; }
+
+.login-footer {
+    text-align: center;
+    font-size: 13px;
+    color: #6B7280;
+}
+.login-footer a {
+    color: #FF4D4D;
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 4px;
+}
+
+
+/* --- 5. STYLE KHUSUS DASHBOARD (REVISI) --- */
+
+body.dashboard-bg {
+    background-color: #000000;
+}
+
+/* Header */
+.dashboard-header {
+    background-color: #1a0f0f; /* Sedikit kemerahan gelap sesuai gambar */
+    padding: 25px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dashboard-logo {
+    font-size: 26px;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    letter-spacing: -0.5px;
+}
+
+.user-profile {
+    color: #e0e0e0;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.dashboard-content {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Navigasi Pills */
+.nav-pills-container {
+    background-color: #121212;
+    border-radius: 50px;
+    padding: 6px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    border: 1px solid #222;
+}
+
+.nav-item {
+    flex: 1;
+    text-align: center;
+    padding: 14px;
+    border-radius: 40px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.nav-item.active {
+    background-color: #2FAF75; 
+    color: white;
+    box-shadow: 0 4px 15px rgba(47, 175, 117, 0.2);
+}
+
+.nav-item:hover:not(.active) {
+    color: #2FAF75;
+}
+
+/* Grid Layout */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px; /* Jarak antar kartu lebih lebar */
+    margin-bottom: 25px;
+}
+
+/* Kartu Umum */
+.card, .chart-card {
+    background-color: #121212; /* Latar belakang hampir hitam */
+    border-radius: 24px; /* Sudut lebih bulat seperti gambar */
+    padding: 30px;
+    border: 1px solid #1f1f1f;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 150px;
+}
+
+.card-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+}
+
+.card-value {
+    font-size: 16px;
+    font-weight: 500;
+    color: #eee;
+}
+
+/* Area Grafik */
+.charts-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.chart-card {
+    height: 320px;
+    display: flex;
+    flex-direction: column;
+}
+
+.chart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.chart-title-text {
+    font-size: 18px; /* Judul grafik lebih besar */
+    margin-bottom: 5px;
+}
+
+.chart-subtitle {
+    font-size: 12px;
+    color: #888;
+    display: block;
+}
+
+.active-indicator {
+    color: white;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+/* Grafik Batang */
+.bar-chart-container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-grow: 1;
+    padding-bottom: 10px;
+    padding-top: 20px;
+}
+
+.bar-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 0 8px; /* Spasi antar bar */
+}
+
+.bar {
+    width: 18px; /* Bar lebih ramping */
+    background-color: #ffffff;
+    border-radius: 6px 6px 6px 6px; /* Rounded penuh */
+    margin-bottom: 12px;
+}
+
+.bar.active {
+    background-color: #2FAF75;
+}
+
+.day-label {
+    font-size: 10px;
+    color: #888;
+    font-weight: 500;
+}
+
+/* Grafik Garis Container */
+.line-chart-container {
+    position: relative;
+    flex-grow: 1;
+    margin-top: 20px;
+}
+
+.chart-axis {
+    border-left: 2px solid #555;
+    border-bottom: 2px solid #ffffff; /* Garis bawah putih tegas */
+    width: 100%;
+    height: 85%; /* Axis tidak penuh sampai atas */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-left: 2px solid #333; /* Axis vertikal samar */
+}
+
+/* --- 6. STYLE KHUSUS WORKOUT PAGE --- */
+
+/* Header Judul & Tombol Log */
+.page-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    margin-top: 10px;
+}
+
+.section-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: white;
+}
+
+.btn-log-workout {
+    background-color: #FF4D4D; /* Merah sesuai gambar */
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-log-workout:hover {
+    background-color: #e04343;
+}
+
+/* List Kartu Workout */
+.workout-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.workout-card {
+    background-color: #121212; /* Warna kartu gelap */
+    border-radius: 24px;
+    padding: 30px;
+    border: 1px solid #1f1f1f;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header Kartu (Judul + Tag) */
+.wc-header {
+    margin-bottom: 10px;
+}
+
+.wc-title-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.wc-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+}
+
+.wc-tag {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 12px;
+    color: #000;
+    text-transform: uppercase;
+}
+
+.tag-purple { background-color: #8F8CFF; color: white; } /* Tag Strength */
+.tag-green { background-color: #bbf7d0; color: #000; }  /* Tag Run */
+
+/* Meta Data (Tanggal) */
+.wc-meta {
+    margin-bottom: 15px;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #888;
+    font-weight: 500;
+}
+
+/* Stats (Waktu & Kalori) */
+.wc-stats-row {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 20px;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #eee;
+    font-weight: 600;
+}
+
+/* Footer (List Latihan) */
+.wc-footer {
+    margin-top: auto;
+}
+
+.exercises-label {
+    display: block;
+    font-size: 11px;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.pill-group {
+    display: flex;
+    gap: 10px;
+}
+
+.pill-white {
+    background-color: white;
+    color: black;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* --- 7. STYLE KHUSUS EXERCISES PAGE --- */
+
+.section-subtitle {
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 25px;
+    margin-top: 5px;
+}
+
+/* Search Bar Area */
+.search-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.search-icon {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    color: white;
+}
+
+.search-input {
+    width: 100%;
+    background-color: #121212; /* Warna search bar gelap */
+    border: 1px solid #222;
+    padding: 16px 16px 16px 55px; /* Padding kiri besar untuk icon */
+    border-radius: 50px; /* Sangat bulat */
+    color: white;
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+    outline: none;
+}
+
+.search-input::placeholder {
+    color: #888;
+}
+
+.search-input:focus {
+    border-color: #2FAF75;
+}
+
+/* Filter Pills (All, Strength, etc) */
+.filter-pills {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.filter-btn {
+    background: none;
+    border: none;
+    color: #888;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 6px 16px;
+    border-radius: 20px;
+    transition: 0.2s;
+}
+
+.filter-btn:hover {
+    color: white;
+}
+
+.filter-btn.active {
+    background-color: #2FAF75; /* Hijau aktif */
+    color: white;
+    color: #000; /* Teks hitam pada tombol hijau agar kontras */
+}
+
+/* Grid Layout 3 Kolom */
+.exercises-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Pastikan 3 kolom */
+    gap: 20px;
+}
+
+/* Exercise Card */
+.ex-card {
+    background-color: #121212;
+    border: 1px solid #1f1f1f;
+    border-radius: 20px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    min-height: 160px;
+    transition: transform 0.2s;
+}
+
+.ex-card:hover {
+    border-color: #333;
+    transform: translateY(-3px);
+}
+
+.ex-card-header {
+    margin-bottom: 15px;
+}
+
+.ex-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.ex-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.tag-dark {
+    background-color: #2A2A2A; /* Tag abu-abu gelap */
+    color: #ccc;
+    font-size: 10px;
+    padding: 4px 10px;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.ex-desc {
+    color: #999;
+    font-size: 12px;
+    line-height: 1.5;
+    margin-top: auto; /* Dorong deskripsi ke bawah jika ada ruang sisa */
+}
+
+/* --- 8. STYLE KHUSUS GOALS PAGE --- */
+
+.btn-new-goal {
+    background-color: #FF4D4D; /* Merah */
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-new-goal:hover {
+    background-color: #e04343;
+}
+
+/* Grid Layout 2 Kolom */
+.goals-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+/* Goal Card Styling */
+.goal-card {
+    background-color: #121212;
+    border-radius: 24px;
+    padding: 30px;
+    border: 1px solid #1f1f1f;
+    display: flex;
+    flex-direction: column;
+}
+
+.gc-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.gc-title-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.gc-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+}
+
+/* Badge Completed Hijau */
+.status-badge.completed {
+    background-color: #00E676; /* Hijau terang */
+    color: #004d25; /* Text hijau gelap agar kontras */
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+}
+
+.btn-icon-delete {
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    transition: 0.2s;
+    padding: 5px;
+}
+
+.btn-icon-delete:hover {
+    color: #FF4D4D; /* Berubah merah saat di-hover */
+}
+
+/* Tanggal Due Date */
+.gc-date {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #999;
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+/* Progress Bar Section */
+.gc-progress-wrapper {
+    margin-top: auto;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    color: #ccc;
+    font-size: 12px;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.progress-bar-bg {
+    width: 100%;
+    height: 10px;
+    background-color: #2a2a2a; /* Warna track gelap */
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background-color: #ffffff; /* Isi bar putih bersih sesuai gambar */
+    border-radius: 10px;
+}
+
+.progress-footer {
+    text-align: right;
+    font-size: 11px;
+    color: #888;
+    font-weight: 500;
+}
